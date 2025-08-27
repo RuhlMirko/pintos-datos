@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="login">
+    <div id="login" class="form">
       <h1>Acceso requerido</h1>
-      <h3>Ingresa tus credenciales para ver la informacion</h3>
+      <h3 class="hint">Ingresa tus credenciales para ver la informacion</h3>
       <div>
-        <label for="user">Usuario</label>
+        <label for="user" class="hint">Usuario</label>
         <input id="user" type="text" placeholder="DNI" />
-        <label for="passw">Contraseña</label>
-        <input id="passw" type="text" />
+        <label for="passw" class="hint">Contraseña</label>
+        <input id="passw" type="text" placeholder="Contraseña" />
         <button>Acceder</button>
       </div>
-      <p>
+      <p class="hint">
         Aviso: Esta protección es de interfaz. Para seguridad real, usá
         autenticación de servidor o cifrado del dataset.
       </p>

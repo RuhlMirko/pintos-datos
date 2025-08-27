@@ -5,6 +5,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -28,11 +29,11 @@ h3 {
   font-size: 0.8em;
 }
 
-#login {
+.form {
   text-align: center;
   width: 30%;
   border-radius: 15px;
-  background: #1d2633;
+  background: hsl(217, 28%, 17%);
   padding: 25px 2vw 2vw;
   box-shadow: 0 0 2rem #00000041;
 }
@@ -46,32 +47,49 @@ h3 {
 #login div button {
   width: 100%;
   border-radius: 10px;
+  box-sizing: border-box;
+  padding: 12px 12px; /* Use the same padding for both */
+  font-size: 1em; /* Optional: ensures text size matches */
+  border: 1px solid rgba(128, 128, 128, 0.514); /* For input, button can override */
+}
+
+.hint {
+  color: #82858b;
+}
+
+#login div label {
+  align-self: flex-start;
+  margin-bottom: 0.7vh;
+  margin-left: 0.2vw;
+  font-size: 0.9em;
 }
 
 #login div input {
-  background-color: #353d47;
-  height: 5vh;
-  border: 1px solid rgba(128, 128, 128, 0.514);
+  background-color: #3f4b58;
   margin-bottom: 2vh;
+  border: 1px solid rgba(128, 128, 128, 0.514);
+  /* Remove height property */
 }
 #login div button {
   border: none;
   color: white;
   font-weight: bold;
   font-size: 1em;
-  padding: 12px 6px;
   background: linear-gradient(to right, #008080 0%, cyan 100%);
   transition: 0.5s;
-}
-#login div button:hover {
-  background: linear-gradient(to right, #016464 0%, rgb(2, 202, 202) 100%);
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 #login p {
-  color: #454b52;
   font-size: small;
 }
 .badge {
   font-size: 0.65rem;
   padding: 0.2rem 0.5rem;
   border-radius: 0.5rem;
+}
+
+#login div input::placeholder {
+  color: #b0b4bb; /* Choose your desired color */
+  opacity: 1; /* Optional: ensures full opacity */
 }
