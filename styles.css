@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #1f2937 0%, #0e182e 100%);
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: rgb(240, 93, 39);
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 0.8em;
+}
+
+#login {
+  text-align: center;
+  width: 30%;
+  border-radius: 15px;
+  background: #1d2633;
+  padding: 25px 2vw 2vw;
+  box-shadow: 0 0 2rem #00000041;
+}
+
+#login div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#login div input,
+#login div button {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#login div input {
+  background-color: #353d47;
+  height: 5vh;
+  border: 1px solid rgba(128, 128, 128, 0.514);
+  margin-bottom: 2vh;
+}
+#login div button {
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 12px 6px;
+  background: linear-gradient(to right, #008080 0%, cyan 100%);
+  transition: 0.5s;
+}
+#login div button:hover {
+  background: linear-gradient(to right, #016464 0%, rgb(2, 202, 202) 100%);
+}
+#login p {
+  color: #454b52;
+  font-size: small;
+}
+.badge {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+}
