@@ -65,12 +65,14 @@ h3 {
 }
 
 #login div input {
+  color: white;
   background-color: #3f4b58;
   margin-bottom: 2vh;
   border: 1px solid rgba(128, 128, 128, 0.514);
   /* Remove height property */
 }
 #login div button {
+  cursor: pointer;
   border: none;
   color: white;
   font-weight: bold;
@@ -79,6 +81,9 @@ h3 {
   transition: 0.5s;
   padding-bottom: 15px;
   padding-top: 15px;
+}
+#login div button:hover {
+  background: linear-gradient(to right, #015858 0%, rgb(2, 211, 211) 100%);
 }
 #login p {
   font-size: small;
@@ -92,4 +97,13 @@ h3 {
 #login div input::placeholder {
   color: #b0b4bb; /* Choose your desired color */
   opacity: 1; /* Optional: ensures full opacity */
+}
+
+#error {
+  display: none;
+  background-color: #961f1f60;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid #ff4d4d;
 }

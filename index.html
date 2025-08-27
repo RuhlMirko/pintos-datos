@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Base de datos</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="back/app.js" type="module" defer></script>
   </head>
   <body>
     <div id="login" class="form">
@@ -16,6 +17,11 @@
         <label for="passw" class="hint">Contraseña</label>
         <input id="passw" type="text" placeholder="Contraseña" />
         <button>Acceder</button>
+      </div>
+      <div>
+        <h3 id="error">
+          ❌ Credenciales incorrectas. Confirme que sus datos sean correctos
+        </h3>
       </div>
       <p class="hint">
         Aviso: Esta protección es de interfaz. Para seguridad real, usá
