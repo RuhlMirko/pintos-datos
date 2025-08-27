@@ -1,5 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(div) {
+  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+::view-transition-new(div) {
+  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+::view-transition-group(div) {
+  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+@keyframes slide-to-left {
+  to {
+    transform: translateX(-100%); /* Or a specific pixel value */
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(100%); /* Or a specific pixel value */
+  }
+}
+
 html,
 body {
   height: 100%;
@@ -32,19 +60,21 @@ h3 {
 .form {
   text-align: center;
   width: 30%;
+  min-width: 400px;
   border-radius: 15px;
   background: hsl(217, 28%, 17%);
   padding: 25px 2vw 2vw;
   box-shadow: 0 0 2rem #00000041;
 }
-
 #login div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-#login div input,
-#login div button {
+#form div input,
+#login div button,
+.form input,
+.form button {
   width: 100%;
   border-radius: 10px;
   box-sizing: border-box;
@@ -64,14 +94,16 @@ h3 {
   font-size: 0.9em;
 }
 
-#login div input {
+#login div input,
+.form input {
   color: white;
   background-color: #3f4b58;
   margin-bottom: 2vh;
   border: 1px solid rgba(128, 128, 128, 0.514);
   /* Remove height property */
 }
-#login div button {
+#login div button,
+.form button {
   cursor: pointer;
   border: none;
   color: white;
@@ -82,7 +114,8 @@ h3 {
   padding-bottom: 15px;
   padding-top: 15px;
 }
-#login div button:hover {
+#login div button:hover,
+.form button:hover {
   background: linear-gradient(to right, #015858 0%, rgb(2, 211, 211) 100%);
 }
 #login p {
@@ -106,4 +139,8 @@ h3 {
   border-radius: 5px;
   margin-top: 10px;
   border: 1px solid #ff4d4d;
+}
+
+#datos-container {
+  display: block;
 }

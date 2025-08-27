@@ -8,14 +8,15 @@
     <script src="back/app.js" type="module"></script>
   </head>
   <body>
-    <div class="form">
+    <div id="datos-container" class="form">
       <div>
         <h1>BASE DE DATOS</h1>
         <p class="hint">"Nueva generacion de comercio"</p>
-        <p id="uploaded-records">Registros cargados:</p>
+        <p id="uploaded-records" class="hint">Registros cargados:</p>
+        <p id="welcome">Bienvenido,</p>
       </div>
       <div></div>
-      <label for="buscador">Numero de local</label>
+      <label for="buscador" class="hint">Numero de local</label>
       <input id="buscador" type="text" placeholder="Ingrese numero de local" />
       <button id="logout">Cerrar sesión</button>
     </div>
