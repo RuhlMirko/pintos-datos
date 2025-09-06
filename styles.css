@@ -1,18 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
+/* CSS Variables for easy color management */
+:root {
+  --color-bg-gradient-start: #1f2937;
+  --color-bg-gradient-end: #0e182e;
+  --color-form-bg: hsl(217, 28%, 17%);
+  --color-input-bg: #3f4b58;
+  --color-input-border: rgba(128, 128, 128, 0.514);
+  --color-placeholder: #b0b4bb;
+  --color-error-bg: #961f1f60;
+  --color-error-border: #ff4d4d;
+  --color-accent: #008080;
+  --color-accent-hover: #015858;
+  --color-accent-light: cyan;
+  --color-accent-hover-light: rgb(2, 211, 211);
+  --color-hint: #82858b;
+  --color-title: rgb(240, 93, 39);
+  --color-success: lightgreen;
+  --color-logout: rgb(235, 142, 142);
+  --border-radius: 10px;
+  --transition: 0.3s;
+}
+
 @view-transition {
   navigation: auto;
 }
 
 @keyframes slide-to-left {
   to {
-    transform: translateX(-100%); /* Or a specific pixel value */
+    transform: translateX(-100%);
   }
 }
-
 @keyframes slide-from-right {
   from {
-    transform: translateX(100%); /* Or a specific pixel value */
+    transform: translateX(100%);
   }
 }
 
@@ -30,7 +51,11 @@ body {
 body {
   font-family: "Inter", sans-serif;
   color: white;
-  background: linear-gradient(135deg, #1f2937 0%, #0e182e 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-gradient-start) 0%,
+    var(--color-bg-gradient-end) 100%
+  );
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -40,46 +65,91 @@ body {
 
 h1 {
   font-size: 1.5rem;
-  color: rgb(240, 93, 39);
+  color: var(--color-title);
   margin-top: 0;
 }
 
 h3 {
   font-size: 0.8em;
+  margin: 2vh 0;
+}
+
+p {
+  margin: 2vh 0;
 }
 
 .form {
   text-align: center;
-  width: 30%;
-  min-width: 400px;
+  width: 40%;
+  min-width: 320px;
+  max-width: 450px;
   border-radius: 15px;
-  background: hsl(217, 28%, 17%);
+  background: var(--color-form-bg);
   padding: 25px 2vw 2vw;
   box-shadow: 0 0 2rem #00000041;
 }
 
-#login div {
+.form div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-#form div input,
-#login div button,
+
 .form input,
 .form button {
   width: 100%;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
-  padding: 12px 12px; /* Use the same padding for both */
-  font-size: 1em; /* Optional: ensures text size matches */
-  border: 1px solid rgba(128, 128, 128, 0.514); /* For input, button can override */
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid var(--color-input-border);
+  transition: border-color var(--transition), box-shadow var(--transition),
+    background var(--transition);
 }
 
-.hint {
-  color: #82858b;
+.form input {
+  color: white;
+  background-color: var(--color-input-bg);
+  margin-bottom: 2vh;
+  outline: none;
 }
 
-#login div label,
+.form input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-light);
+}
+
+.form input::placeholder {
+  color: var(--color-placeholder);
+  opacity: 1;
+}
+
+.form button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(
+    to right,
+    var(--color-accent) 0%,
+    var(--color-accent-light) 100%
+  );
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 2vh;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.form button:hover,
+.form button:focus {
+  background: linear-gradient(
+    to right,
+    var(--color-accent-hover) 0%,
+    var(--color-accent-hover-light) 100%
+  );
+  box-shadow: 0 2px 8px #00000022;
+}
+
 .form label {
   align-self: flex-start;
   margin-bottom: 0.7vh;
@@ -87,51 +157,24 @@ h3 {
   font-size: 0.9em;
 }
 
-#login div input,
-.form input {
-  color: white;
-  background-color: #3f4b58;
-  margin-bottom: 2vh;
-  border: 1px solid rgba(128, 128, 128, 0.514);
-  /* Remove height property */
-}
-#login div button,
-.form button {
-  cursor: pointer;
-  border: none;
-  color: white;
-  font-weight: bold;
-  font-size: 1em;
-  background: linear-gradient(to right, #008080 0%, cyan 100%);
-  transition: 0.5s;
-  padding-bottom: 15px;
-  padding-top: 15px;
-}
-#login div button:hover,
-.form button:hover {
-  background: linear-gradient(to right, #015858 0%, rgb(2, 211, 211) 100%);
-}
-#login p {
-  font-size: small;
-}
-.badge {
-  font-size: 0.65rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
-}
-
-#login div input::placeholder {
-  color: #b0b4bb; /* Choose your desired color */
-  opacity: 1; /* Optional: ensures full opacity */
+.hint {
+  color: var(--color-hint);
 }
 
 #error {
   display: none;
-  background-color: #961f1f60;
+  background-color: var(--color-error-bg);
   padding: 10px;
   border-radius: 5px;
   margin-top: 10px;
-  border: 1px solid #ff4d4d;
+  border: 1px solid var(--color-error-border);
+  font-size: 0.95em;
+}
+
+.badge {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
 }
 
 #datos-container {
@@ -142,11 +185,34 @@ h3 {
   text-align: left;
   margin-top: 2vh;
 }
-
 #datos-container p {
   margin-bottom: 1vh;
 }
 #welcome {
-  color: lightgreen;
+  color: var(--color-success);
   margin-top: 2vh;
+}
+#logout {
+  background: none;
+  text-decoration: underline;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-logout);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+  .form {
+    width: 95vw;
+    min-width: unset;
+    padding: 18px 4vw 2vw;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  .form input,
+  .form button {
+    font-size: 0.95em;
+    padding: 10px;
+  }
 }

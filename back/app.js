@@ -1,7 +1,7 @@
 import USERS_DB from "./users.js";
 
 const errorElement = document.getElementById("error");
-const loginBtn = document.querySelector("#login button");
+const loginBtn = document.getElementById("btnLogin");
 const userInput = document.getElementById("user");
 const passInput = document.getElementById("passw");
 
