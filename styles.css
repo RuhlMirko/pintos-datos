@@ -200,6 +200,16 @@ p {
   color: var(--color-logout);
 }
 
+footer {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+footer a {
+  color: var(--color-accent-hover);
+  margin: 5px;
+}
+
 /* Responsive design for mobile */
 @media (max-width: 600px) {
   .form {
