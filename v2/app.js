@@ -2,8 +2,8 @@ import USERS_DB from "./users.js";
 
 const errorElement = document.getElementById("error");
 const loginBtn = document.getElementById("btnLogin");
-const userInput = document.getElementById("user");
-const passInput = document.getElementById("passw");
+const userInput = document.getElementById("username");
+const passInput = document.getElementById("password");
 
 loginBtn.addEventListener("click", function (e) {
   e.preventDefault();
