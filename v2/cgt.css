@@ -154,21 +154,29 @@ button:active {
   border-radius: 5px;
   background: #464646;
   color: white;
+  display: none;
 }
 #results h2 {
-  margin-top: 1vw;
+  margin: 0.5vw;
 }
 #results div {
   border: 2px solid black;
   border-radius: 5px;
   padding: 0 0.2rem;
   background-color: #807f7f;
-  margin-bottom: 2vh;
+  margin: 0.5vh 0.5vw 2vh;
 }
 #results p {
   margin: 0.3rem 0;
   padding: 0 0.2rem;
   border-bottom: 1px solid #00000042;
+  font-weight: 700;
+}
+#results p:last-child {
+  border: none;
+}
+#results em {
+  font-weight: 300;
 }
 footer {
   position: absolute;
