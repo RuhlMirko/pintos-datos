@@ -36,6 +36,10 @@ h2 {
   font-weight: 600;
 }
 
+input {
+  font-size: 1.6rem;
+}
+
 button {
   box-shadow: #000b166b 2px 5px 0.2rem;
   transition: 0.2s;
@@ -73,13 +77,13 @@ button:active {
   margin: 0 1vw;
 }
 #login label {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-weight: 600;
   font-style: italic;
   color: #464646;
 }
 #login input {
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   padding: 0.5rem;
   border: 1px solid #807f7f;
   background-color: #f0f0f0;
@@ -87,6 +91,7 @@ button:active {
 }
 #login button {
   margin-top: 0.7rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   background-color: #007bff;
   color: white;
