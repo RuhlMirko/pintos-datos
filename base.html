@@ -3,29 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Base de datos</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="back/app.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cgt.css" />
+    <script src="./js/base.js" type="module" defer></script>
+    <title>Base de Datos</title>
   </head>
   <body>
-    <div id="datos-container" class="form" style="view-transition-name: fg">
-      <div>
-        <h1>BASE DE DATOS</h1>
-        <div>
-          <p class="hint">"Nueva generacion de comercio"</p>
-          <p id="uploaded-records" class="hint">Registros cargados:</p>
-          <p id="welcome">Bienvenido,</p>
-        </div>
-      </div>
-      <div>
-        <p>Usuario:</p>
-        <p id="user-name">name</p>
-        <a href="" id="logout">Cerrar sesion</a>
+    <main class="form">
+      <h1>Base de datos</h1>
+      <h2>Nueva generacion de comercio</h2>
+      <p id="record-amount">Registros cargados:</p>
+      <div id="search">
+        <label for="searchInput">Buscar:</label>
+        <input type="text" id="searchInput" placeholder="Ingrese N° de local" />
+        <button id="searchBtn">Buscar</button>
       </div>
 
-      <label for="buscador" class="hint">Numero de local</label>
-      <input id="buscador" type="text" placeholder="Ingrese numero de local" />
-      <button>Buscar</button>
-    </div>
+      <button id="logout">Cerrar Sesion</button>
+      <div id="results">
+        <h2>Información del local: 'numero'</h2>
+        <div>
+          <p>Local:</p>
+          <p>Direccion:</p>
+          <p>Barrio:</p>
+          <p>Delegado</p>
+          <p>Zona</p>
+          <p>Gerente regional</p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
