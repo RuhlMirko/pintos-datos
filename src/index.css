@@ -2,7 +2,7 @@
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  font-synthesis: none;
+  font-synthesis: style weight;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,6 +22,10 @@ body {
   color: #ffffff;
 }
 
+button {
+  cursor: pointer;
+}
+
 #root {
   width: min(760px, 100%);
   padding: 0 1rem;
@@ -34,14 +38,27 @@ body {
   gap: 1.75rem;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   margin: 0;
   font-size: clamp(2rem, 5.5vw, 3.35rem);
-  line-height: 1;
+  line-height: 0.1;
   text-transform: uppercase;
   font-style: italic;
   font-weight: 900;
-  letter-spacing: -0.02em;
+}
+h2 {
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.349);
+  color: rgb(175, 174, 174);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 form {
@@ -72,15 +89,15 @@ input {
   border-radius: 1.95rem;
   padding: 1.25rem 1.5rem 1.25rem 4.35rem;
   background: #ececec;
-  color: #677180;
-  font-size: clamp(1.25rem, 3.1vw, 2.8rem);
-  font-style: normal;
-  font-weight: 800;
+  color: black;
+  font-size: clamp(1.25rem, 2.1vw, 2rem);
+  font-weight: 600;
+  font-family: "Montserrat";
   outline: none;
 }
 
 input::placeholder {
-  color: #8b94a4;
+  color: #545a6385;
 }
 
 .search-btn {
@@ -89,12 +106,17 @@ input::placeholder {
   padding: 1.1rem;
   background: #ff0f2f;
   color: #ffffff;
-  font-size: clamp(1.7rem, 4.3vw, 3.1rem);
+  font-size: clamp(1.7rem, 2.3vw, 3.1rem);
   text-transform: uppercase;
   font-style: italic;
   font-weight: 900;
   cursor: pointer;
   box-shadow: 0 9px 0 #b30719;
+  transition: 0.2s;
+}
+.search-btn:hover {
+  background: #c90317;
+  transform: translateY(-2px);
 }
 
 .filters {
@@ -115,6 +137,15 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+  transition: 0.2s;
+}
+.filters button:hover {
+  background: linear-gradient(180deg, #20325f 0%, #0a1b41 100%);
+}
+.filters button.selected,
+.filters button.selected:hover {
+  background: #68b305;
+  outline: 2px solid #f0e8e8;
 }
 
 .filter-icon {
