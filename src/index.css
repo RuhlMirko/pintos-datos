@@ -10,6 +10,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -24,30 +26,34 @@ body {
 
 button {
   cursor: pointer;
+  text-shadow: 2px 2px 5px black;
 }
 
 #root {
   width: min(760px, 100%);
-  padding: 0 1rem;
+  padding-inline: 2%;
 }
 
 .search-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.75rem;
+  justify-content: center;
+  gap: 12px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.logo-carrefour {
+  height: 14vh;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+  padding-inline: 1em;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2rem, 5.5vw, 3.35rem);
-  line-height: 0.1;
+  font-size: 5vh;
+  line-height: 1;
   text-transform: uppercase;
   font-style: italic;
   font-weight: 900;
@@ -75,12 +81,11 @@ form {
 
 .search-icon {
   position: absolute;
-  left: 1.6rem;
+  left: 5%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
   color: #bcc5d3;
-  font-size: 2rem;
-  line-height: 1;
+  font-size: 3.5vw;
 }
 
 input {
@@ -89,11 +94,12 @@ input {
   border-radius: 1.95rem;
   padding: 1.25rem 1.5rem 1.25rem 4.35rem;
   background: #ececec;
-  color: black;
+  color: rgb(15, 10, 153);
   font-size: clamp(1.25rem, 2.1vw, 2rem);
   font-weight: 600;
   font-family: "Montserrat";
   outline: none;
+  text-align: center;
 }
 
 input::placeholder {
@@ -150,6 +156,14 @@ input::placeholder {
 
 .filter-icon {
   font-size: 1.2em;
+  filter: drop-shadow(2px 2px 2px black);
+
+  &.vegetable {
+    color: lightgreen;
+  }
+  &.fruit {
+    color: orange;
+  }
 }
 
 button:focus-visible,

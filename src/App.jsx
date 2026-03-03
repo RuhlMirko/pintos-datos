@@ -1,4 +1,9 @@
 import React from "react"
+import {
+  Apple, Leaf, ArrowLeft, Loader2, Database,
+  Salad, Search, ShieldCheck, Sparkles,
+  Maximize, Camera, CheckCircle2, Info
+} from 'lucide-react';
 
 function App() {
   const [currFilter, setCurrFilter] = React.useState(null)
@@ -9,12 +14,12 @@ function App() {
 
   return (
     <main className='search-card'>
+      <img src='/carrefour-logo.svg' alt="" className="logo-carrefour"/>
       <h1>CONSULTA RÁPIDA</h1>
       <div className="result"></div>      
       <form>
         <label className='search-input-wrapper'>
-          <span className='search-icon' aria-hidden='true'>⌕</span>
-          <label htmlFor="search">PLU / Nombre</label>
+          <span className='search-icon' aria-hidden='true'>⌕</span>          
           <input id="search" type='text' placeholder='Busca por PLU o nombre...' />
         </label>
         <h2>Filtros</h2>
@@ -24,7 +29,7 @@ function App() {
             type='button'
             onClick={() => updateFilter('Fruta')}
           >
-            <span className='filter-icon' aria-hidden='true'>🍎</span>
+            <span className='filter-icon fruit' aria-hidden='true'><Apple/></span>
             FRUTAS
           </button>
           <button
@@ -32,7 +37,7 @@ function App() {
             type='button'
             onClick={() => updateFilter('Verdura')}
           >
-            <span className='filter-icon' aria-hidden='true'>🍃</span>
+            <span className='filter-icon vegetable' aria-hidden='true'><Leaf/></span>
             VERDURAS
           </button>
           
