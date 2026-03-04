@@ -8,8 +8,22 @@ import {
 function App() {
   const [currFilter, setCurrFilter] = React.useState(null)
 
-  function updateFilter(chosenFilter){
-    setCurrFilter(chosenFilter)
+  const resultDiv = document.querySelector('.result')
+  const testResult = {Fruta:{"Banana ecuador": { codigo: 8844, tipo: "Producto fresco" }}}
+
+  function handleSubmit(e){
+    e.preventDefault()
+    renderResult()
+    console.log('handleSubmit called')
+  }
+
+  function renderResult(){    
+    resultDiv.innerHTML = `<h2>${testResult.Fruta["Banana ecuador"]["codigo"]}</h2>`
+    console.log('renderResult called')
+  }
+
+  function updateFilter(chosenFilter){    
+    setCurrFilter(chosenFilter)   
   }
 
   return (
@@ -17,7 +31,7 @@ function App() {
       <img src='/carrefour-logo.svg' alt="" className="logo-carrefour"/>
       <h1>CONSULTA RÁPIDA</h1>
       <div className="result"></div>      
-      <form>
+      <form onSubmit={handleSubmit}>
         <label className='search-input-wrapper'>
           <span className='search-icon' aria-hidden='true'>⌕</span>          
           <input id="search" type='text' placeholder='Busca por PLU o nombre...' />
